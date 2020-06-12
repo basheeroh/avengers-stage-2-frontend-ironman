@@ -6,6 +6,15 @@
     <title>Home</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="ASSETS/CSS/font-awesome.min.css">
+    <link rel="stylesheet" href="ASSETS/CSS/fonts/FontAwesome.otf">
+    <link rel="stylesheet" href="ASSETS/CSS/fonts/fontawesome-webfont.eot">
+    <link rel="stylesheet" href="ASSETS/CSS/fonts/fontawesome-webfont.svg">
+    <link rel="stylesheet" href="ASSETS/CSS/fonts/fontawesome-webfont.ttf">
+    <link rel="stylesheet" href="ASSETS/CSS/fonts/fontawesome-webfont.woff">
+    <link rel="stylesheet" href="ASSETS/CSS/fonts/fontawesome-webfont.woff2">
+    <link rel="stylesheet" href="ASSETS/CSS/fonts/glyphicons-halflings-regular.woff">
+    <link rel="stylesheet" href="ASSETS/CSS/fonts/glyphicons-halflings-regular.woff2">
     <style>
             body {
                 padding: 0; margin: 0; color: #fff;
@@ -41,6 +50,40 @@
         div.header-content h1 {
             font-size: 70px; letter-spacing: 0.1em; margin: 0;
         }
+        .icon{
+            display: none;
+        }
+        
+
+        @media screen and (max-width: 700px){
+    .hided {
+        display: none;
+    }
+
+    li#title {
+        float: left;
+        display: inline;
+    }
+    li#title a {
+        padding: 20px;
+    }
+    #iconcon {
+        display: block; float: right; padding: 20px;
+    }
+    .headercontent {
+        width: 100%;
+    }
+   
+    .icon {
+            display: inherit;
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            
+        }
+}
         </style>
 </head>
 
@@ -59,23 +102,30 @@
         <!-- your codes here -->
         <body>
             <div class="header">
+                    
+                    <div onclick="myfunction()" id="iconcon">
+                         <div class="icon" ></div>
+                         <div class="icon" ></div>
+                         <div class="icon" ></div>
+                    </div>
                     <ul class="menu">
                         <li id="title">
                             <a href="#">DELUXE</a>
                         </li>
-                        <li>
+                        <li class="hided">
                             <a href="#">Contact Us</a>
                         </li>
-                        <li>
+                        <li class="hided">
                             <a href="#">Facilities</a>
                         </li>
-                        <li>
+                        <li class="hided">
                             <a href="#">Rooms</a>
                         </li>
-                        <li>
+                        <li class="hided">
                             <a href="#">About</a>
                         </li>
                     </ul>
+                    
         
                     <div class="header-content">
                         <p>Facilities</p>
@@ -83,7 +133,40 @@
                     </div>
             </div>
             <script>
-            console.log("Ajala");
+                var x = document.getElementsByClassName("hided");
+                function myfunction() {
+                    for (let i = 0; i < x.length; i++) {
+                    if (x[i].style.display.match("block") ){
+                        x[i].style.display = "none";
+                    } else {
+                        x[i].style.display = "block";
+                    }
+
+                    }
+                }
+
+                window.onresize = function () {
+                    for (let i = 0; i < x.length; i++) {
+                        if(window.innerWidth < 700) {
+                            x[i].style.display = "none";
+                        } else {
+                                x[i].style.display = "block";
+                            }
+                        }
+                    
+
+                        
+                function myfunction() {
+                    for (let i = 0; i < x.length; i++) {
+                    if (x[i].style.display.match("block") ){
+                        x[i].style.display = "none";
+                    } else {
+                        x[i].style.display = "block";
+                    }
+
+                    }
+                }
+                }
             </script>
         </body>
 
